@@ -29,21 +29,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String _text = "Ganjil";
+  int _counter = 1;
+  String _text = "Genap Kelipatan 3 : ";
 
   void _incrementCounter() {
     setState(() {
       _counter++;
-      if (_counter > 10) {
-        _counter = 1;
-      }
 
-      _text = "Ganjil";
-      for (int i = 0; i < _counter; i++) {
-        if (i % 2 != 0) {
-          _text += "${i}, ";
-        }
+      if (_counter % 2 == 0 && _counter % 3 == 0) {
+        _text += "${_counter}, ";
       }
     });
   }
