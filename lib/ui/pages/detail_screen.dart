@@ -22,7 +22,10 @@ class DetailScreen extends StatelessWidget {
                 child: const Text(
                   "Surabaya Submarine Monument",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 )),
             Container(
               padding: const EdgeInsets.all(16),
