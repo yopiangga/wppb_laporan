@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -25,8 +26,19 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [Text("Surabaya Submarine Monument")],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+                width: double.infinity,
+                padding: EdgeInsets.only(top: 20),
+                child: Text(
+                  "Surabaya Submarine Monument",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ))
+          ],
+        ),
       ),
     );
   }
