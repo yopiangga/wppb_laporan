@@ -30,22 +30,34 @@ class DetailScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: const [
                       Icon(Icons.calendar_today),
                       Text("Open Every Day")
                     ],
-                  )
+                  ),
+                  Column(
+                    children: const [
+                      Icon(Icons.access_time),
+                      Text("08.00 - 16.00")
+                    ],
+                  ),
+                  Column(
+                    children: const [
+                      Icon(Icons.attach_money),
+                      Text("Rp 10.000,-")
+                    ],
+                  ),
                 ],
               ),
             ),
             Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(16),
                 child: Text(
-                  Faker().lorem.sentences(3).join(" "),
+                  Faker().lorem.sentences(2).join(" "),
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 16),
                 )),
