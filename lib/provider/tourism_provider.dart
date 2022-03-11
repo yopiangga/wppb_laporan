@@ -6,47 +6,52 @@ class TourismProvider with ChangeNotifier {
         title: Faker().lorem.sentence(),
         location: Faker().address.city(),
         imageUrl: 'https://picsum.photos/id/' +
-            Random().nextInt(1000).toString() +
+            Random().nextInt(100).toString() +
             '/200/300',
         price: Random().nextInt(100).toString(),
         distance: Random().nextInt(100).toString(),
-        weather: "Rainy"),
+        weather: "Rainy",
+        description: Faker().lorem.sentences(3).join(" ")),
     TourismModel(
         title: Faker().lorem.sentence(),
         location: Faker().address.city(),
         imageUrl: 'https://picsum.photos/id/' +
-            Random().nextInt(1000).toString() +
+            Random().nextInt(100).toString() +
             '/200/300',
         price: Random().nextInt(100).toString(),
         distance: Random().nextInt(100).toString(),
-        weather: "Rainy"),
+        weather: "Rainy",
+        description: Faker().lorem.sentences(3).join(" ")),
     TourismModel(
         title: Faker().lorem.sentence(),
         location: Faker().address.city(),
         imageUrl: 'https://picsum.photos/id/' +
-            Random().nextInt(1000).toString() +
+            Random().nextInt(100).toString() +
             '/200/300',
         price: Random().nextInt(100).toString(),
         distance: Random().nextInt(100).toString(),
-        weather: "Rainy"),
+        weather: "Rainy",
+        description: Faker().lorem.sentences(3).join(" ")),
     TourismModel(
         title: Faker().lorem.sentence(),
         location: Faker().address.city(),
         imageUrl: 'https://picsum.photos/id/' +
-            Random().nextInt(1000).toString() +
+            Random().nextInt(100).toString() +
             '/200/300',
         price: Random().nextInt(100).toString(),
         distance: Random().nextInt(100).toString(),
-        weather: "Rainy"),
+        weather: "Rainy",
+        description: Faker().lorem.sentences(3).join(" ")),
     TourismModel(
         title: Faker().lorem.sentence(),
         location: Faker().address.city(),
         imageUrl: 'https://picsum.photos/id/' +
-            Random().nextInt(1000).toString() +
+            Random().nextInt(100).toString() +
             '/200/300',
         price: Random().nextInt(100).toString(),
         distance: Random().nextInt(100).toString(),
-        weather: "Rainy"),
+        weather: "Rainy",
+        description: Faker().lorem.sentences(3).join(" ")),
   ];
 
   List<TourismModel> get tourismList => _tourismList;

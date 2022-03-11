@@ -142,7 +142,15 @@ class _HomeScreenState extends State<HomeScreen>
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: tourisms.map((el) {
-                      return TourismWidget(el);
+                      return GestureDetector(
+                        onTap: () => {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return DetailScreen(el);
+                          }))
+                        },
+                        child: TourismWidget(el),
+                      );
                     }).toList(),
                   ),
                 ),

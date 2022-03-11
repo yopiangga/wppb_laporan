@@ -7,6 +7,7 @@ class TourismModel {
   final String distance;
   final String weather;
   final String price;
+  final String description;
 
   TourismModel(
       {this.title = "",
@@ -14,5 +15,6 @@ class TourismModel {
       this.imageUrl = "",
       this.distance = "",
       this.weather = "",
-      this.price = ""});
+      this.price = "",
+      this.description = ""});
 }
