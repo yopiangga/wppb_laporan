@@ -49,10 +49,10 @@ class _HomeScreenState extends State<HomeScreen>
               ]),
           child: Row(
             children: [
-              BottomNavBar(icon: Icons.folder, index: 0),
-              BottomNavBar(icon: Icons.settings, index: 1),
+              BottomNavBar(icon: Icons.home, index: 0),
+              BottomNavBar(icon: Icons.map, index: 1),
               BottomNavBar(icon: Icons.bar_chart, index: 2),
-              BottomNavBar(icon: Icons.bar_chart, index: 2),
+              BottomNavBar(icon: Icons.person, index: 3),
             ],
           ),
         ),
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen>
                         child: Text(
                           "Hi Alfian Prisma Y!",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.black87),
                         ),
@@ -103,13 +103,7 @@ class _HomeScreenState extends State<HomeScreen>
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     "Where would you like to go today?",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    children: [],
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                   ),
                 ),
                 Container(

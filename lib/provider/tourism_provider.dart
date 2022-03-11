@@ -1,6 +1,8 @@
 part of 'provider.dart';
 
 class TourismProvider with ChangeNotifier {
+  List<TourismModel> get tourismList => _tourismList;
+
   List<TourismModel> _tourismList = [
     TourismModel(
         title: Faker().lorem.sentence(),
@@ -53,6 +55,4 @@ class TourismProvider with ChangeNotifier {
         weather: "Rainy",
         description: Faker().lorem.sentences(3).join(" ")),
   ];
-
-  List<TourismModel> get tourismList => _tourismList;
 }
