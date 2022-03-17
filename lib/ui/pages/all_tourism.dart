@@ -76,8 +76,6 @@ List<TourismModel> tourismPlaceList = [
 class AllTourism extends StatefulWidget {
   AllTourism({Key? key}) : super(key: key);
 
-  final List<TourismModel> doneTourismPlaceList = [];
-
   @override
   State<AllTourism> createState() => _AllTourismState();
 }
@@ -85,6 +83,9 @@ class AllTourism extends StatefulWidget {
 class _AllTourismState extends State<AllTourism> {
   @override
   Widget build(BuildContext context) {
+    final List<TourismModel> doneTourismPlaceList =
+        Provider.of<TourismDoneProvider>(context).tourismDone;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff4265D6),
@@ -96,8 +97,7 @@ class _AllTourismState extends State<AllTourism> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      DoneTourism(widget.doneTourismPlaceList),
+                  builder: (context) => DoneTourism(),
                 ),
               );
             },
@@ -119,13 +119,13 @@ class _AllTourismState extends State<AllTourism> {
                         final TourismModel place = tourismPlaceList[index];
                         return TourismCanSelectWidget(place, () {
                           setState(() {
-                            if (widget.doneTourismPlaceList.contains(place)) {
-                              widget.doneTourismPlaceList.remove(place);
+                            if (doneTourismPlaceList.contains(place)) {
+                              doneTourismPlaceList.remove(place);
                             } else {
-                              widget.doneTourismPlaceList.add(place);
+                              doneTourismPlaceList.add(place);
                             }
                           });
-                        }, widget.doneTourismPlaceList.contains(place));
+                        }, doneTourismPlaceList.contains(place));
                       })))),
         ],
       ),

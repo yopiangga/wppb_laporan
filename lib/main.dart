@@ -12,19 +12,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        primarySwatch: Colors.blue,
-      ),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => BannerProvider()),
-          ChangeNotifierProvider(create: (context) => TourismProvider()),
-        ],
-        child: MainScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BannerProvider()),
+        ChangeNotifierProvider(create: (context) => TourismProvider()),
+        ChangeNotifierProvider(create: (context) => TourismDoneProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          primarySwatch: Colors.blue,
+        ),
+        home: MainScreen(),
       ),
     );
   }

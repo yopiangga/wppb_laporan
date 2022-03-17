@@ -6,3 +6,4 @@ import 'package:wppb_laporan/model/model.dart';
 
 part 'banner_provider.dart';
 part 'tourism_provider.dart';
+part 'tourism_done_provider.dart';
