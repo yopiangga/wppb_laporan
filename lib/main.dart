@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (context) => BannerProvider()),
           ChangeNotifierProvider(create: (context) => TourismProvider()),
         ],
-        child: HomeScreen(),
+        child: MainScreen(),
       ),
     );
   }
