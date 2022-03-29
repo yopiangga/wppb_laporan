@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:wppb_laporan/data/model/article.dart';
 import 'package:wppb_laporan/ui/article_detail_page.dart';
 import 'package:wppb_laporan/ui/article_list_page.dart';

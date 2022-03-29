@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class ArticleResult {
   ArticleResult({
     this.status,

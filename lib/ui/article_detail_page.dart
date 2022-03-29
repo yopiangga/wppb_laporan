@@ -45,12 +45,15 @@ class ArticleDetailPage extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     Divider(color: Colors.grey),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, ArticleWebView.routeName,
-                              arguments: article.url);
-                        },
-                        child: Text(article.url))
+                    Center(
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, ArticleWebView.routeName,
+                                arguments: article.url);
+                          },
+                          child: Text("Read More")),
+                    )
                   ],
                 )),
           ],
