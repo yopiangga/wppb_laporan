@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wppb_laporan/ui/pages/pages.dart';
+import 'package:wppb_laporan/providers/providers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +12,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BannerProvider()),
+        ChangeNotifierProvider(create: (context) => TourismProvider()),
+        ChangeNotifierProvider(create: (context) => TourismDoneProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          primarySwatch: Colors.blue,
+        ),
+        home: MainPage(),
       ),
-      home: MainScreen(),
     );
   }
 }
