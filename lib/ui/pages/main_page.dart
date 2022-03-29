@@ -10,7 +10,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage>
     with SingleTickerProviderStateMixin {
   int activeMenu = 0;
-  late TabController _tabController;
+  TabController _tabController;
 
   @override
   void initState() {

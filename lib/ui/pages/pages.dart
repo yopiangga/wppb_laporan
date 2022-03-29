@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wppb_laporan/models/models.dart';
 import 'package:wppb_laporan/providers/providers.dart';
+import 'package:wppb_laporan/services/services.dart';
 import 'package:wppb_laporan/ui/widgets/widgets.dart';
 
 part 'tourism_detail_page.dart';

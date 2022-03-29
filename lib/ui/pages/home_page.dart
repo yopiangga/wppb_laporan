@@ -1,17 +1,38 @@
 part of 'pages.dart';
 
 class HomePage extends StatefulWidget {
-  // const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  Future<List<TourismModel>> _tourism;
+  Future<List<BannerModel>> _banner;
+
+  void initState() {
+    super.initState();
+    _tourism = TourismServices.getTourisms();
+    _banner = BannerServices.getBanners();
+  }
+
   @override
   Widget build(BuildContext context) {
     final banners = Provider.of<BannerProvider>(context).bannerList;
     final tourisms = Provider.of<TourismProvider>(context).tourismList;
+
+    _tourism.then((value) {
+      if (tourisms.length == 0) {
+        tourisms.addAll(value);
+        setState(() {});
+      }
+    });
+
+    _banner.then((value) {
+      if (banners.length == 0) {
+        banners.addAll(value);
+        setState(() {});
+      }
+    });
 
     return ListView(
       children: [
@@ -99,6 +120,34 @@ class _HomePageState extends State<HomePage> {
             }).toList(),
           ),
         ),
+        // FutureBuilder(
+        //     future: _tourism,
+        //     builder: (context, AsyncSnapshot<List<TourismModel>> snapshot) {
+        //       if (snapshot.connectionState == ConnectionState.waiting) {
+        //         return Center(
+        //           child: CircularProgressIndicator(),
+        //         );
+        //       } else {
+        //         // print(snapshot.data[1]);
+        //         return Container(
+        //           margin: EdgeInsets.only(top: 20),
+        //           padding: EdgeInsets.symmetric(horizontal: 20),
+        //           child: Column(
+        //             children: snapshot.data.map((el) {
+        //               return GestureDetector(
+        //                 onTap: () => {
+        //                   Navigator.push(context,
+        //                       MaterialPageRoute(builder: (context) {
+        //                     return TourismDetailPage(el);
+        //                   }))
+        //                 },
+        //                 child: TourismWidget(el),
+        //               );
+        //             }).toList(),
+        //           ),
+        //         );
+        //       }
+        //     }),
       ],
     );
   }

@@ -17,4 +17,19 @@ class TourismModel {
       this.weather = "",
       this.price = "",
       this.description = ""});
+
+  factory TourismModel.fromJson(Map<String, dynamic> json) {
+    return TourismModel(
+      title: json['title'],
+      location: json['location'],
+      imageUrl: json['imageUrl'],
+      distance: json['distance'],
+      weather: json['weather'],
+      price: json['price'],
+      description: json['description'],
+    );
+  }
+
+  List<Object> get props =>
+      [title, location, imageUrl, distance, weather, price, description];
 }
