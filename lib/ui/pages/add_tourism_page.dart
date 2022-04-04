@@ -163,7 +163,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
                   price: widget._priceController.text,
                   description: widget._descriptionController.text);
               var result = await TourismServices.addTourism(item);
-              _tourismList.add(item);
+              // _tourismList.add(item);
             },
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 16),

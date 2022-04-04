@@ -15,7 +15,9 @@ class TourismServices {
     var data = json.decode(response.body);
     List result = data;
 
-    return result.map((e) => TourismModel.fromJson(e['data'])).toList();
+    return result
+        .map((e) => TourismModel.fromJson(e['data'], e['id']))
+        .toList();
   }
 
   static Future<http.Response> addTourism(TourismModel item) async {
@@ -35,6 +37,20 @@ class TourismServices {
         'weather': item.weather ?? "",
         'price': item.price ?? "",
         'description': item.description ?? "",
+      }),
+    );
+  }
+
+  static Future<http.Response> deleteTourism(String uid) async {
+    String url = "http://172.16.102.54:3000/api/tourism/delete";
+
+    return http.post(
+      Uri.parse(url),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'uid': uid ?? "",
       }),
     );
   }

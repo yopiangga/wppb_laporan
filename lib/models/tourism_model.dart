@@ -1,6 +1,7 @@
 part of 'models.dart';
 
 class TourismModel {
+  final String id;
   final String title;
   final String location;
   final String imageUrl;
@@ -9,15 +10,17 @@ class TourismModel {
   final String price;
   final String description;
   TourismModel(
-      {this.title = "",
+      {this.id = "",
+      this.title = "",
       this.location = "",
       this.imageUrl = "",
       this.distance = "",
       this.weather = "",
       this.price = "",
       this.description = ""});
-  factory TourismModel.fromJson(Map<String, dynamic> json) {
+  factory TourismModel.fromJson(Map<String, dynamic> json, String id) {
     return TourismModel(
+      id: id,
       title: json['title'],
       location: json['location'],
       imageUrl: json['imageUrl'],
@@ -29,5 +32,5 @@ class TourismModel {
   }
 
   List<Object> get props =>
-      [title, location, imageUrl, distance, weather, price, description];
+      [id, title, location, imageUrl, distance, weather, price, description];
 }
