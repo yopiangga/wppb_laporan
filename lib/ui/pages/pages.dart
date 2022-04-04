@@ -14,5 +14,5 @@ part 'main_page.dart';
 part 'home_page.dart';
 part 'add_tourism_page.dart';
 part 'edit_tourism_page.dart';
-part 'update_tourism_page.dart';
+part 'edit_tourism_detail_page.dart';
 part 'delete_tourism_page.dart';

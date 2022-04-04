@@ -49,7 +49,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._titleController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),
@@ -64,7 +63,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._locationController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),
@@ -79,7 +77,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._imageUrlController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),
@@ -94,7 +91,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._distanceController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),
@@ -109,7 +105,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._weatherController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),
@@ -124,7 +119,6 @@ class _AddTourismPageState extends State<AddTourismPage> {
           TextField(
             controller: widget._priceController,
             onChanged: (text) {},
-            maxLength: 40,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: mainColor),

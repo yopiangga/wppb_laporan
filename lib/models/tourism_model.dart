@@ -31,6 +31,10 @@ class TourismModel {
     );
   }
 
+  String toString() {
+    return '$id, $title, $location, $imageUrl, $distance, $weather, $price, $description';
+  }
+
   List<Object> get props =>
       [id, title, location, imageUrl, distance, weather, price, description];
 }
