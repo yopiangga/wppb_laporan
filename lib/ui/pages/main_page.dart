@@ -47,9 +47,9 @@ class _MainPageState extends State<MainPage>
           child: Row(
             children: [
               BottomNavBar(icon: Icons.home, index: 0),
-              BottomNavBar(icon: Icons.map, index: 1),
-              BottomNavBar(icon: Icons.bar_chart, index: 2),
-              BottomNavBar(icon: Icons.person, index: 3),
+              BottomNavBar(icon: Icons.add_a_photo, index: 1),
+              BottomNavBar(icon: Icons.format_list_bulleted, index: 2),
+              BottomNavBar(icon: Icons.delete, index: 3),
             ],
           ),
         ),
@@ -57,9 +57,9 @@ class _MainPageState extends State<MainPage>
           controller: _tabController,
           children: [
             HomePage(),
-            Text("Page 2"),
-            Text("Page 3"),
-            Text("Page 4"),
+            AddTourismPage(),
+            EditTourismPage(),
+            DeleteTourismPage(),
           ],
         ),
       ),

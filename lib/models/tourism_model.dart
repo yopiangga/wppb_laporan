@@ -8,7 +8,6 @@ class TourismModel {
   final String weather;
   final String price;
   final String description;
-
   TourismModel(
       {this.title = "",
       this.location = "",
@@ -17,7 +16,6 @@ class TourismModel {
       this.weather = "",
       this.price = "",
       this.description = ""});
-
   factory TourismModel.fromJson(Map<String, dynamic> json) {
     return TourismModel(
       title: json['title'],
