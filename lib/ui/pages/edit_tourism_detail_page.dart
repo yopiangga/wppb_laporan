@@ -33,7 +33,7 @@ class _EditTourismDetailPageState extends State<EditTourismDetailPage> {
     });
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Tourism"),
+        title: Text("Form Edit Tourism"),
         backgroundColor: Colors.white,
         foregroundColor: accentColor2,
         elevation: 0,
@@ -186,7 +186,7 @@ class _EditTourismDetailPageState extends State<EditTourismDetailPage> {
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  "Update Place",
+                  "Update",
                   textAlign: TextAlign.center,
                   style: whiteTextFont.copyWith(
                       fontWeight: FontWeight.w600, fontSize: 18),

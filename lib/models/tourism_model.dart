@@ -1,14 +1,14 @@
 part of 'models.dart';
 
 class TourismModel {
-  final String id;
-  final String title;
-  final String location;
-  final String imageUrl;
-  final String distance;
-  final String weather;
-  final String price;
-  final String description;
+  String id;
+  String title;
+  String location;
+  String imageUrl;
+  String distance;
+  String weather;
+  String price;
+  String description;
   TourismModel(
       {this.id = "",
       this.title = "",

@@ -1,6 +1,6 @@
 part of 'pages.dart';
 
-class AddTourismPage extends StatefulWidget {
+class AddTourismPage extends StatelessWidget {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _locationController = TextEditingController();
   TextEditingController _imageUrlController = TextEditingController();
@@ -9,11 +9,6 @@ class AddTourismPage extends StatefulWidget {
   TextEditingController _priceController = TextEditingController();
   TextEditingController _descriptionController = TextEditingController();
 
-  @override
-  State<AddTourismPage> createState() => _AddTourismPageState();
-}
-
-class _AddTourismPageState extends State<AddTourismPage> {
   @override
   Widget build(BuildContext context) {
     List<TourismModel> _tourismList =
@@ -47,7 +42,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 30),
           TextField(
-            controller: widget._titleController,
+            controller: _titleController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -61,7 +56,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._locationController,
+            controller: _locationController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -75,7 +70,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._imageUrlController,
+            controller: _imageUrlController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -89,7 +84,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._distanceController,
+            controller: _distanceController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -103,7 +98,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._weatherController,
+            controller: _weatherController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -117,7 +112,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._priceController,
+            controller: _priceController,
             onChanged: (text) {},
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -131,7 +126,7 @@ class _AddTourismPageState extends State<AddTourismPage> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: widget._descriptionController,
+            controller: _descriptionController,
             onChanged: (text) {},
             maxLength: 535,
             maxLines: 8,
@@ -149,15 +144,23 @@ class _AddTourismPageState extends State<AddTourismPage> {
           GestureDetector(
             onTap: () async {
               TourismModel item = new TourismModel(
-                  title: widget._titleController.text,
-                  location: widget._locationController.text,
-                  imageUrl: widget._imageUrlController.text,
-                  distance: widget._distanceController.text,
-                  weather: widget._weatherController.text,
-                  price: widget._priceController.text,
-                  description: widget._descriptionController.text);
+                  title: _titleController.text,
+                  location: _locationController.text,
+                  imageUrl: _imageUrlController.text,
+                  distance: _distanceController.text,
+                  weather: _weatherController.text,
+                  price: _priceController.text,
+                  description: _descriptionController.text);
               var result = await TourismServices.addTourism(item);
-              // _tourismList.add(item);
+              item.id = jsonDecode(result.body.toString())['data'];
+              _tourismList.add(item);
+              _titleController.text = "";
+              _locationController.text = "";
+              _imageUrlController.text = "";
+              _distanceController.text = "";
+              _weatherController.text = "";
+              _priceController.text = "";
+              _descriptionController.text = "";
             },
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 16),
