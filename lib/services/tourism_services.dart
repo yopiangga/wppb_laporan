@@ -2,7 +2,7 @@ part of 'services.dart';
 
 class TourismServices {
   static Future<List<TourismModel>> getTourisms({http.Client client}) async {
-    String url = "http://172.16.102.54:3000/api/tourism/get-tourisms";
+    String url = "http://192.168.43.119:3000/api/tourism/get-tourisms";
 
     client ??= http.Client();
 
@@ -21,7 +21,7 @@ class TourismServices {
   }
 
   static Future<http.Response> addTourism(TourismModel item) async {
-    String url = "http://172.16.102.54:3000/api/tourism/add";
+    String url = "http://192.168.43.119:3000/api/tourism/add";
 
     return http.post(
       Uri.parse(url),
@@ -42,7 +42,7 @@ class TourismServices {
   }
 
   static Future<http.Response> updateTourism(TourismModel item) async {
-    String url = "http://172.16.102.54:3000/api/tourism/edit";
+    String url = "http://192.168.43.119:3000/api/tourism/edit";
 
     return http.post(
       Uri.parse(url),
@@ -64,7 +64,7 @@ class TourismServices {
   }
 
   static Future<http.Response> deleteTourism(String uid) async {
-    String url = "http://172.16.102.54:3000/api/tourism/delete";
+    String url = "http://192.168.43.119:3000/api/tourism/delete";
 
     return http.post(
       Uri.parse(url),
